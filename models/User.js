@@ -20,17 +20,16 @@ const userSchema = new mongoose.Schema({
     date: {
         type: Date,
         default: Date.now
-    }
+    },
+    farmId: [
+        {
+            type: mongoose.Schema.ObjectId,
+            require: true,
+            ref: "farm",
+            default: []
+        }
+    ],
 });
 
 module.exports = mongoose.model('User', userSchema);
 
-
-// User {
-//     name,
-//     email,
-//     password,
-//     avatar,
-//     date,
-//     Farm[],
-// }
