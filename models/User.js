@@ -24,3 +24,13 @@ const userSchema = new mongoose.Schema({
 });
 
 module.exports = mongoose.model('User', userSchema);
+
+
+// User {
+//     name,
+//     email,
+//     password,
+//     avatar,
+//     date,
+//     Farm[],
+// }
