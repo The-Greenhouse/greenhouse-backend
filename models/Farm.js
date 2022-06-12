@@ -3,25 +3,25 @@ const mongoose = require('mongoose');
 const farmSchema = new mongoose.Schema({
     brokerId: {
         type: mongoose.Schema.ObjectId,
-        require: true,
+        required: true,
         ref: "Broker"
     },
     billingId : {
         type: mongoose.Schema.ObjectId,
-        require: true,
+        required: true,
         ref: "Broker"
     },
     blockId : [
         {
             type: mongoose.Schema.ObjectId,
-            require: true,
+            required: true,
             ref: "farm",
             default: []
         }
     ],
     userId : {
         type: mongoose.Schema.ObjectId,
-        require: true,
+        required: true,
         ref: "User"
     },
     date: {

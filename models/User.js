@@ -24,7 +24,7 @@ const userSchema = new mongoose.Schema({
     farmId: [
         {
             type: mongoose.Schema.ObjectId,
-            require: true,
+            required: true,
             ref: "farm",
             default: []
         }
