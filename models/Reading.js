@@ -6,10 +6,13 @@ const readingSchema = new mongoose.Schema({
         required:true,
         default: Date.now
     },
-    cacheBlockId : {
-        type: mongoose.Schema.ObjectId,
+    avg_value : {
+        type: mongoose.Schema.Types.Decimal128,
         required: true,
-        ref: "CacheBlock"
+    },
+    type: {
+        type: String,
+        required: true,
     },
 });
 

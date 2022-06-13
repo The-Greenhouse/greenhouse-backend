@@ -14,6 +14,9 @@ const billingSchema = new mongoose.Schema({
         type: Number,
         required: true,
     },
+    billingPlan : {
+        type: String,
+    },
     lastPaid : {
         type: Date,
         default: Date.now

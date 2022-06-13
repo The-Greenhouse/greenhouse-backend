@@ -17,14 +17,22 @@ const blockSchema = new mongoose.Schema({
             ref: "Actuator",
             default: []
         }
-    ]
+    ],
+    data : {
+        count : {
+            type : Number,
+            default : 0,
+            required: true,
+        },
+        avg_value : {
+            type: mongoose.Schema.Types.Decimal128,
+            required: true
+        },
+        last_updated : {
+            type : Date,
+            default : Date.now
+        }
+    }
 });
 
 module.exports = mongoose.model('Block', blockSchema);
-
-// Block {
-//     location_Number,
-//     Sensor[],
-//     Actuators[],
-// }
-
