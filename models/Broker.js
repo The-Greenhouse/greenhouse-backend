@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const brokerchema = new mongoose.Schema({
+const brokerSchema = new mongoose.Schema({
     url: {
         type: String,
         required: true
@@ -12,9 +12,9 @@ const brokerchema = new mongoose.Schema({
     farmId : {
         type: mongoose.Schema.ObjectId,
         require: true,
-        ref: "Broker"
+        ref: "Farm"
     }
 });
 
-module.exports = mongoose.model('Farm', brokerSchema);
+module.exports = mongoose.model('Broker', brokerSchema);
 

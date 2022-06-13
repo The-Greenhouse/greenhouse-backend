@@ -1,19 +1,20 @@
 
 const mongoose = require('mongoose');
 
-const billingSchema = new mongoose.Schema({
+const sensorSchema = new mongoose.Schema({
+    // farm environmental variables
     type: {
         type: String,
         required: true,
-        ref: "farm_variable_type"
     },
     value : {
         type: mongoose.Schema.Types.Decimal128,
         required: true,
     },
     blockId : {
-        type: mongoose.Schema.Types.Decimal128,
+        type: mongoose.Schema.ObjectId,
         required: true,
+        ref:"Block"
     },
     dateInstalled : {
         type: Date,
@@ -30,5 +31,5 @@ const billingSchema = new mongoose.Schema({
     }
 });
 
-module.exports = mongoose.model('Billing', billingSchema);
+module.exports = mongoose.model('Sensor', sensorSchema);
 

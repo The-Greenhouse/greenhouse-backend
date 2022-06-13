@@ -9,13 +9,13 @@ const farmSchema = new mongoose.Schema({
     billingId : {
         type: mongoose.Schema.ObjectId,
         required: true,
-        ref: "Broker"
+        ref: "Billing"
     },
     blockId : [
         {
             type: mongoose.Schema.ObjectId,
             required: true,
-            ref: "farm",
+            ref: "Block",
             default: []
         }
     ],

@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const billingSchema = new mongoose.Schema({
+const blockSchema = new mongoose.Schema({
     locationTag: {
         type: String,
     },
@@ -20,7 +20,7 @@ const billingSchema = new mongoose.Schema({
     ]
 });
 
-module.exports = mongoose.model('Billing', billingSchema);
+module.exports = mongoose.model('Block', blockSchema);
 
 // Block {
 //     location_Number,
