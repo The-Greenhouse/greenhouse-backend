@@ -1,5 +1,3 @@
-
-const string = require('@hapi/joi/lib/types/string');
 const mongoose = require('mongoose');
 
 const billingSchema = new mongoose.Schema({
