@@ -4,7 +4,7 @@ const AdminRoutes = require('./AdminRoutes');
 
 const apiRouter = express.Router();
 
-apiRouter.use('/', AuthRoutes);
-apiRouter.use('/', AdminRoutes);
+apiRouter.use('/auth', AuthRoutes);
+apiRouter.use('/admin', AdminRoutes);
 
 module.exports = apiRouter;

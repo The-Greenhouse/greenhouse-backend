@@ -7,7 +7,7 @@ dotenv.config();
 // Middlewares
 app.use(express.json());
 
-// Impirting Routes
+// Importing Routes
 app.use('/api', require('./routes/index'));
 
 // Connect to DB

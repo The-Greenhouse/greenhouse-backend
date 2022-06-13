@@ -1,14 +1,16 @@
 const express = require('express');
-
+const authenticate = require('../utils/authenticate');
 const contactusRoutes = express.Router();
 
-// const contactusController = require('../controllers/contactus.controller');
-
-// contactusRoutes.post('/', errorHandler.wrapAsync(contactusController.someFunctionName));
-
-contactusRoutes.get('/adminTest', (req, res) => {
+contactusRoutes.get('/public', (req, res) => {
     res.json({
         test : "test from admin"
+    })
+});
+
+contactusRoutes.get('/private', authenticate, (req, res) => {
+    res.json({
+        test : "test is private"
     })
 });
 
