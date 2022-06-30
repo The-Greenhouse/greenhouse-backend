@@ -1,4 +1,5 @@
 const User = require('../models/User');
+const Sensor = require('../models/Sensor');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const SensorServiceWorker = require('../utils/SensorServiceWorker');
@@ -18,4 +19,19 @@ module.exports = {
                 payload : data
             });
     },
+    async setSensordata (req,res,next) {
+        
+        const type = req.body.type;
+        const value = req.body.value;
+        const sensor = new Sensor({
+            type : req.body.type,
+            value : req.body.value,
+        });
+        try{
+            const sensordata = await sensor.save();
+            res.send({sensor: sensor._id});
+        }catch(err){
+            res.status(500).send(err);
+        }
+    }
 }

@@ -10,4 +10,10 @@ router.route('/getSensorData')
         SensorController.GetSensordata
     );
 
+router.route('/setSensorData')
+    .post(
+        authenticate, 
+        SensorController.setSensordata
+    );
+
 module.exports = router;
